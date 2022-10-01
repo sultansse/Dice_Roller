@@ -4,6 +4,7 @@
     <disabledRules>
       <list>
         <option value="package-name" />
+        <option value="no-trailing-spaces" />
       </list>
     </disabledRules>
   </component>
