@@ -4,11 +4,24 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import kz.ss_softwareit.diceroller.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+
+        binding.textAsButton.setOnClickListener() {
+            binding.textAsButton.text = "TEXT is changed!"
+        }
+
 
         val rollButton: Button = findViewById(R.id.roll)
         rollButton.setOnClickListener {
